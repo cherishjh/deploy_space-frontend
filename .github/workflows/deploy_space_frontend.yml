@@ -1,13 +1,10 @@
-name: Deploy to AWS S3
+name: Deploy to Ec2 with Jar
 
 on:
   push:
     branches:
-      - notNow
-#      - develop
-
+      - develop
 jobs:
-  # 작업의 이름 지정
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
@@ -22,7 +19,7 @@ jobs:
         working-directory: .
         run: npm install
 
-      - name: npm build
+      - name: npm run build
         working-directory: .
         run: npm run build
 
@@ -33,6 +30,6 @@ jobs:
           aws-secret-access-key: ${{secrets.AWS_S3_SECRET_KEY}}
           aws-region: "ap-northeast-2"
 
-      - name: deploy to S3
+      - name: deploy to s3
         run: |
-          aws s3 sync ./dist/spa s3://space-frontend
+          aws s3 sync ./dist/spa s3://spaceencore.shop
