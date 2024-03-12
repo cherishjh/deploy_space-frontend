@@ -1,0 +1,38 @@
+name: Deploy to AWS S3
+
+on:
+  push:
+    branches:
+      - notNow
+#      - develop
+
+jobs:
+  # 작업의 이름 지정
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: setup node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: npm install
+        working-directory: .
+        run: npm install
+
+      - name: npm build
+        working-directory: .
+        run: npm run build
+
+      - name: setup aws cli
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{secrets.AWS_S3_ACCESS_KEY}}
+          aws-secret-access-key: ${{secrets.AWS_S3_SECRET_KEY}}
+          aws-region: "ap-northeast-2"
+
+      - name: deploy to S3
+        run: |
+          aws s3 sync ./dist/spa s3://space-frontend

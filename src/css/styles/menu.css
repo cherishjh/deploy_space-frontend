@@ -1,0 +1,106 @@
+.left__menu {
+    /*width: 50%;*/
+    width: 100%;
+    height: 100vh;
+    min-width: 50px;
+    transition: width 1s ease 0s;
+    position: fixed;
+    display: grid;
+    grid-template-columns:2fr 10fr 2fr;
+    grid-template-rows: 2fr 6fr 1fr 2fr;
+
+    &:hover {
+        width: 100%;
+    }
+
+    .left__menu__empty {
+        grid-column: 1/2;
+    }
+
+    .left__menu__navibtn {
+        grid-row: 2/3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 1vw;
+        font-weight: 500;
+        color: var(--box-text);
+
+        div {
+            display: flex;
+            background-color: var(--box-bg);
+            padding: 18px 19px 22px 19px;
+            border-radius: 1vw;
+            width: 12vw;
+            /*작동안함*/
+            cursor: pointer;
+
+            i {
+               margin: 0.01vw 1vw 0 0.5vw;
+                width: 1.2vw;
+                height: 1.2vw;
+            }
+        }
+
+        .navibtn__myspace{
+            i {
+                background-image: url("../../assets/icon/menubar/home.svg");
+            }
+
+        }
+        .navibtn__teamspace{
+            i {
+                background-image: url("../../assets/icon/menubar/team.svg");
+            }
+        }
+
+        .navibtn__groupspace{
+            i {
+                background-image: url("../../assets/icon/menubar/group.svg");
+            }
+        }
+        .navibtn__kanban{
+            i {
+                background-image: url("../../assets/icon/menubar/grid.svg");
+            }
+        }
+        .navibtn__Calendar{
+            i {
+                background-image: url("../../assets/icon/menubar/calendar-silhouette.svg");
+            }
+        }
+
+        .navibtn__Messages{
+            i {
+                background-image: url("../../assets/icon/menubar/messages.svg");
+            }
+        }
+
+    }
+
+    .left__menu__profile {
+        background-color: orange;
+        grid-row: 3/4;
+
+    }
+
+    .left__menu__copyright {
+        background-color: white;
+        grid-row: 4/5;
+
+    }
+
+}
+
+.right--menu {
+    width: 50%;
+    transition: width 1s ease 0s;
+    background-color: green;
+    justify-self: right;
+    grid-area: d;
+
+    &:hover {
+        width: 100%;
+    }
+}

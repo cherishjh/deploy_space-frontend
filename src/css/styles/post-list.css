@@ -1,0 +1,78 @@
+
+.post-detail-box__bg {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-detail-box__form {
+    background-color: var(--modal-window-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80vw;
+    max-width: 1400px;
+    padding: 60px 60px;
+    border-radius: 20px;
+
+    img {
+        width:50vw;
+        max-width:1000px;
+        border-radius: 40px;
+    }
+}
+
+
+.post-detail-box__inputs {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    input {
+        width: 100%;
+        padding: 18px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+    }
+}
+
+.btn-box {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+
+    button {
+        width: 100%;
+        padding: 18px;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+        transition: 0.4s ease 0s;
+
+        &:hover {
+            opacity: 0.8
+        }
+    }
+
+    .btn-like {
+        background: #0d61ce
+    }
+
+    .btn-dislike {
+        background: #DB4437;
+    }
+
+    .btn-close {
+        background: #333;
+    }
+}

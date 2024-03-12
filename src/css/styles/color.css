@@ -1,0 +1,13 @@
+:root {
+    --background: rgba(251, 251, 251, 1);
+    --box-bg: rgba(238, 238, 238, 1);
+    --box-text: rgba(113, 117, 121, 1);
+    --notification-default: rgba(34, 81, 248, 1);
+    --notification-success: rgba(57, 132, 243, 1);
+    --notification-warning: rgba(255, 94, 75, 1);
+    --primary: rgba(57, 132, 243, 1);
+    --primary-highligt--bg: rgba(34, 81, 248, 0.15);
+    --modal-window-bg: rgba(129, 193, 231, 0.9);
+
+
+}
